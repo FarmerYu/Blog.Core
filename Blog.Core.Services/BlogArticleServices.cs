@@ -44,8 +44,6 @@ namespace Blog.Core.Services
                 int blogIndex = bloglist.FindIndex(item => item.bID == id);
                 if (blogIndex >= 0)
                 {
-                    try
-                    {
                         prevblog = blogIndex > 0 ? (((BlogArticle)(bloglist[blogIndex - 1]))) : null;
                         nextblog = blogIndex + 1 < bloglist.Count() ? (BlogArticle)(bloglist[blogIndex + 1]) : null;
 
@@ -64,9 +62,6 @@ namespace Blog.Core.Services
                             models.previous = prevblog.btitle;
                             models.previousID = prevblog.bID;
                         }
-
-                    }
-                    catch (Exception) { }
                 }
 
 
